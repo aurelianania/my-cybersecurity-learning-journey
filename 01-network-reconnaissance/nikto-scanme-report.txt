@@ -1,3 +1,5 @@
+Untuk menggali lebih dalam kecacatan pada layanan web server Apache 2.4.7 di port 80, dilakukan pemindaian otomatis menggunakan tool Nikto untuk mengetahui ada cacat apa saja di website itu.
+
 # Nikto Vulnerability Assessment Report
 Target: http://scanme.nmap.org
 Perintah: nikto -h http://scanme.nmap.org
