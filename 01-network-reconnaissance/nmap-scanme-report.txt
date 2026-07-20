@@ -1,1 +1,45 @@
+# Nmap Fast & Version Scan Report
+Target: scanme.nmap.org
+Tanggal: 21 Juli 2026
+Perintah: nmap -F -sV scanme.nmap.org
 
+
+┌──(nania㉿vbox)-[~]
+└─$ nmap -F -sV  scanme.nmap.org   
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-21 01:37 WIB
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.066s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 80 closed tcp ports (reset)
+PORT      STATE    SERVICE     VERSION
+22/tcp    open     ssh         OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+23/tcp    filtered telnet
+25/tcp    filtered smtp
+79/tcp    filtered finger
+80/tcp    open     http        Apache httpd 2.4.7 ((Ubuntu))
+389/tcp   filtered ldap
+427/tcp   filtered svrloc
+465/tcp   filtered smtps
+514/tcp   filtered shell
+548/tcp   filtered afp
+646/tcp   filtered ldp
+873/tcp   filtered rsync
+1027/tcp  filtered IIS
+2001/tcp  filtered dc
+3128/tcp  filtered squid-http
+6000/tcp  filtered X11
+8000/tcp  filtered http-alt
+8008/tcp  filtered http
+9100/tcp  filtered jetdirect
+32768/tcp filtered filenet-tms
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 16.18 seconds
+
+
+Kesimpulan Analisis:
+- Target memiliki 2 port terbuka: Port 22 (SSH) dan Port 80 (HTTP).
+- Port 22 menjalankan OpenSSH 6.6.1p1 (Ubuntu).
+- Port 80 menjalankan Apache httpd 2.4.7 (Ubuntu).
+- Kedua software terdeteksi menggunakan versi lama yang berpotensi memiliki celah keamanan
