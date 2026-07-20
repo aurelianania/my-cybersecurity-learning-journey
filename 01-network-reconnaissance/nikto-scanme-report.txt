@@ -1,1 +1,35 @@
+# Nikto Vulnerability Assessment Report
+Target: http://scanme.nmap.org
+Perintah: nikto -h http://scanme.nmap.org
 
+'''
+┌──(nania㉿vbox)-[~]
+└─$ nikto -h http://scanme.nmap.org
+- Nikto v2.5.0
+---------------------------------------------------------------------------
++ Multiple IPs found: 45.33.32.156, 2600:3c01::f03c:91ff:fe18:bb2f
++ Target IP:          45.33.32.156
++ Target Hostname:    scanme.nmap.org
++ Target Port:        80
++ Start Time:         2026-07-21 00:17:32 (GMT7)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.7 (Ubuntu)
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ No CGI Directories found (use '-C all' to force check all possible dirs)
++ /index: Uncommon header 'tcn' found, with contents: list.
++ /index: Apache mod_negotiation is enabled with MultiViews, which allows attackers to easily brute force file names. The following alternatives for 'index' were found: index.html. See: http://www.wisec.it/sectou.php?id=4698ebdc59d15,https://exchange.xforce.ibmcloud.com/vulnerabilities/8275
++ Apache/2.4.7 appears to be outdated (current is at least Apache/2.4.54). Apache 2.2.34 is the EOL for the 2.x branch.
++ OPTIONS: Allowed HTTP Methods: GET, HEAD, POST, OPTIONS .
++ ERROR: Error limit (20) reached for host, giving up. Last error: 
++ Scan terminated: 0 error(s) and 6 item(s) reported on remote host
++ End Time:           2026-07-21 00:23:22 (GMT7) (350 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
+'''
+
+Analisis Temuan Nikto:
+- The anti-clickjacking X-Frame-Options header is not present: Server tidak memblokir pembungkusan halaman web palsu secara transparan, membuat situs rentan terhadap penipuan klik (Clickjacking).
+- The X-Content-Type-Options header is not set: Membuka peluang serangan MIME-Sniffing, di mana browser bisa dipaksa mengeksekusi file teks biasa sebagai skrip berbahaya.
+- Apache mod_negotiation is enabled with MultiViews: Membantu penyerang menebak nama file atau direktori rahasia di dalam server secara lebih mudah lewat metode brute-force.
+- Apache/2.4.7 appears to be outdated: Nikto mengonfirmasi secara resmi bahwa versi Apache ini sudah kedaluwarsa dan berada di fase End of Life (EOL).
