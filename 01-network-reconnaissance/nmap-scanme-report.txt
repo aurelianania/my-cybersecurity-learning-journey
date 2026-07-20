@@ -1,9 +1,11 @@
+Pemindaian awal dilakukan menggunakan fitur *Fast Scan* (`-F`) untuk memangkas waktu pemindaian ke 100 port populer, serta *Version Detection* (`-sV`) untuk mengintip versi software di port yang terbuka.
+
 # Nmap Fast & Version Scan Report
 Target: scanme.nmap.org
 Tanggal: 21 Juli 2026
 Perintah: nmap -F -sV scanme.nmap.org
 
-
+'''
 ┌──(nania㉿vbox)-[~]
 └─$ nmap -F -sV  scanme.nmap.org   
 Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-21 01:37 WIB
@@ -36,7 +38,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 16.18 seconds
-
+'''
 
 Kesimpulan Analisis:
 - Target memiliki 2 port terbuka: Port 22 (SSH) dan Port 80 (HTTP).
